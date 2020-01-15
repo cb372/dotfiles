@@ -21,7 +21,6 @@ Plug 'chrisbra/csv.vim'
 
 " Filesystem/search
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 

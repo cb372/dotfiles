@@ -6,3 +6,5 @@ set smartcase     " ignore case if search pattern is all lowercase, case-sensiti
 set incsearch     " show search matches as you type
 
 set nohlsearch    " do not highlight search matches
+
+nnoremap <C-n> :Files<CR>
