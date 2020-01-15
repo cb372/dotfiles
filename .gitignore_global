@@ -1,0 +1,16 @@
+boot/
+target/
+*.swp
+.DS_Store
+.idea
+*.iml
+*.ipr
+*.iws
+.rbenv-version
+.ensime
+.ensime_cache/
+.tags
+.bloop/
+.metals/
+.vscode/
+project/metals.sbt

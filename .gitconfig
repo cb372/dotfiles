@@ -1,0 +1,20 @@
+[user]
+	name = Chris Birchall
+	signingkey = 7A57943D50711AD3
+[core]
+	editor = nvim
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+[github]
+	user = cb372
+[push]
+	default = simple
+[color]
+	diff = auto
+[alias]
+	co = checkout
+[commit]
+	gpgsign = true
+[diff]
+	noprefix = true
+	tool = vimdiff

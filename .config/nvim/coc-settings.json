@@ -1,0 +1,12 @@
+{
+  "languageserver": {
+    "haskell": {
+      "command": "ghcide",
+      "args": [ "--lsp" ],
+      "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml"],
+      "filetypes": ["hs", "lhs", "haskell"]
+    }
+  },
+  "coc.preferences.jumpCommand": "vsplit",
+  "coc.preferences.formatOnType": true
+}
