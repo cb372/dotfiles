@@ -1,5 +1,7 @@
 " Based on https://github.com/neoclide/coc.nvim#example-vim-configuration
 
+" Uncomment this to enable debugging of coc.nvim using Chrome dev tools
+"let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
