@@ -29,6 +29,7 @@ export PACKER_HOME=/usr/local/opt/packer/bin
 PATH=$PATH:$PACKER_HOME
 
 export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/homebrew_github_api_token.txt)
+export COC_GITHUB_USERS_TOKEN=$(cat ~/coc-github-users-token.txt)
 
 source ${HOME}/.zprofile.local
 
