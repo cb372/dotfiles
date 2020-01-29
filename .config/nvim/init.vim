@@ -20,6 +20,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'embear/vim-localvimrc'
 Plug 'aserebryakov/vim-todo-lists'
 Plug 'chrisbra/csv.vim'
+Plug 'maxbrunsfeld/vim-yankstack'
 
 " Filesystem/search
 Plug 'scrooloose/nerdtree'
