@@ -21,6 +21,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'aserebryakov/vim-todo-lists'
 Plug 'chrisbra/csv.vim'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'dhruvasagar/vim-zoom'
 
 " Filesystem/search
 Plug 'scrooloose/nerdtree'
