@@ -22,6 +22,7 @@ Plug 'aserebryakov/vim-todo-lists'
 Plug 'chrisbra/csv.vim'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'tpope/vim-surround'
 
 " Filesystem/search
 Plug 'scrooloose/nerdtree'
