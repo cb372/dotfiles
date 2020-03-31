@@ -62,4 +62,7 @@ export GPG_TTY=$(tty)
 # Make fzf use ag as its find command so it respects .gitignore, .gitignore_global, etc.
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
+# Set JAVA_HOME to Java 8
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 export LOADED_ZPROFILE=true
