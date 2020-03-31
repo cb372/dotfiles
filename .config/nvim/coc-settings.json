@@ -8,5 +8,6 @@
     }
   },
   "coc.preferences.jumpCommand": "vsplit",
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+  "yank.highlight.duration": 700
 }
