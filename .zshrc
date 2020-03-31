@@ -232,7 +232,7 @@ zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
 
 sbtnew() {
   local projectname=$1
-  local sbtversion=${2:-1.3.8}
+  local sbtversion=${2:-1.3.9}
   local scalaversion=${3:-2.13.1}
   cd ~/code
   mkdir $projectname
