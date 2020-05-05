@@ -48,6 +48,8 @@ nnoremap <silent> F :call CocAction('format')<CR>
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Use L to show parameter hints
+nnoremap <silent> L :call CocActionAsync('showSignatureHelp')<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
