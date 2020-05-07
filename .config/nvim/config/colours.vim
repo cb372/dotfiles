@@ -8,3 +8,7 @@ highlight PMenu                 ctermfg=232 ctermbg=13
 highlight PMenuSel              ctermfg=232 ctermbg=12
 highlight CocErrorFloat                     ctermbg=13
 highlight CocWarningFloat                   ctermbg=13
+
+" Don't want a nasty grey gutter
+highlight clear SignColumn
+let g:gitgutter_set_sign_backgrounds = 1
