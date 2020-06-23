@@ -160,14 +160,8 @@ add-zsh-hook precmd vcs_info_wrapper
 PROMPT='%{$fg[green]%}[%n@%m %h %~]%{$reset_color%} ${vcs_info_msg_0_}
 $ '
 
-# Moved git info to main prompt because it gets in the way when copy-pasting commands and output
-#RPROMPT='${vcs_info_msg_0_}'
-
-# Set up rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # Set up autojump
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+which brew &> /dev/null && [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 # Disable annoying 'no matches found' warning
 setopt nonomatch

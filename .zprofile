@@ -5,14 +5,16 @@ export PATH
 
 PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
-# Add rbenv to path
-PATH="$HOME/.rbenv/bin:$PATH"
+if [ -d "$HOME/.rbenv" ]; then
+  # Add rbenv to path
+  PATH="$HOME/.rbenv/bin:$PATH"
 
-# Initialize rbenv
-eval "$(rbenv init -)"
+  # Initialize rbenv
+  eval "$(rbenv init -)"
+fi
 
 # Initializa pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
 
 # Add ghar to path
 PATH=$PATH:$HOME/ghar/bin
@@ -55,6 +57,6 @@ export GPG_TTY=$(tty)
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # Set JAVA_HOME to Java 8
-export JAVA_HOME=$(/usr/libexec/java_home)
+[ -f /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home)
 
 export LOADED_ZPROFILE=true
