@@ -20,14 +20,6 @@ PATH=$PATH:$HOME/ghar/bin
 # Add npm bin to path
 PATH=$PATH:/usr/local/share/npm/bin
 
-# Add Android SDK tools to path
-export ANDROID_HOME=$HOME/Library/Android/sdk
-PATH=$PATH:$ANDROID_HOME/tools
-
-# Add Packer to path
-export PACKER_HOME=/usr/local/opt/packer/bin
-PATH=$PATH:$PACKER_HOME
-
 export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/homebrew_github_api_token.txt)
 export COC_GITHUB_USERS_TOKEN=$(cat ~/coc-github-users-token.txt)
 
