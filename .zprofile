@@ -54,7 +54,7 @@ export GPG_TTY=$(tty)
 #. /Users/chris/.nix-profile/etc/profile.d/nix.sh
 
 # Make fzf use ag as its find command so it respects .gitignore, .gitignore_global, etc.
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --ignore node_modules -g ""'
 
 # Set JAVA_HOME to Java 8
 [ -f /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home)
