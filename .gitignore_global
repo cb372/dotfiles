@@ -13,4 +13,5 @@ target/
 .bloop/
 .metals/
 .vscode/
-project/metals.sbt
+metals.sbt
+.bsp/
