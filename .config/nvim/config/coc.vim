@@ -1,5 +1,22 @@
 " Based on https://github.com/neoclide/coc.nvim#example-vim-configuration
 
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-metals',
+  \ 'coc-yank',
+  \ 'coc-json',
+  \ 'coc-github-users',
+  \ 'coc-emoji'
+  \ ]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
 " Uncomment this to enable debugging of coc.nvim using Chrome dev tools
 "let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
 

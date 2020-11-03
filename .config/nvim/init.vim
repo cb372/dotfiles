@@ -45,6 +45,7 @@ Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Idris
 Plug 'idris-hackers/idris-vim'
