@@ -26,7 +26,7 @@ Plug 'tpope/vim-surround'
 
 " Filesystem/search
 Plug 'scrooloose/nerdtree'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Tags
