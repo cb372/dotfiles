@@ -57,6 +57,14 @@ export GPG_TTY=$(tty)
 export FZF_DEFAULT_COMMAND='ag --ignore node_modules -g ""'
 
 # Set JAVA_HOME to Java 8
-[ -f /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home)
+#[ -f /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home)
+#
+# Set JAVA_HOME to Java 11 (Graal)
+export JAVA_HOME=$(cs java-home --jvm graalvm-ce-java11)
+
+# Function to easily downgrade to Java 8
+java8() {
+  export JAVA_HOME=$(cs java-home --jvm adopt:1.8)
+}
 
 export LOADED_ZPROFILE=true
