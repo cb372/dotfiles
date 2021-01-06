@@ -10,5 +10,9 @@
   "coc.preferences.jumpCommand": "vsplit",
   "coc.preferences.formatOnType": true,
   "yank.highlight.duration": 700,
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "python.linting.pylintEnabled": false,
+  "python.linting.mypyEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.jediEnabled": false
 }

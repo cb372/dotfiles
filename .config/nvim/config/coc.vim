@@ -6,7 +6,8 @@ let g:coc_global_extensions = [
   \ 'coc-yank',
   \ 'coc-json',
   \ 'coc-github-users',
-  \ 'coc-emoji'
+  \ 'coc-emoji',
+  \ 'coc-python'
   \ ]
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
