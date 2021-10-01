@@ -251,3 +251,5 @@ sbtlatest() {
   sbtnew "$projectname" "$latestsbt" "$latestscala"
 }
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
