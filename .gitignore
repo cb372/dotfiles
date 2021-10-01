@@ -3,11 +3,14 @@
 !*.vim
 !*.json
 !*.sbt
-.config/hub
 .config/coc/
 .config/configstore/
 .config/htop/
+.config/hub
+.config/iterm2/
+.config/jgit/
 .config/wireshark/
+.config/yarn/
 .config/znt/
 .sbt/ghpages/
 .sbt/preloaded/
