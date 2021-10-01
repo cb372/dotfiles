@@ -2,9 +2,6 @@ set tags=.tags
 
 let g:autotagTagsFile=".tags"
 
-map <C-o> :CtrlPTag<CR>
-map <C-i> :TagbarToggle<CR>
-
 " Regenerate tags file
 map <C-u> :!ctags -R -f ./.tags .<CR>
 

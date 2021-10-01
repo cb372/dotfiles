@@ -103,4 +103,8 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Workaround for the coc.nvim dangling float issue: close all floats when
 " leaving insert mode
-autocmd InsertLeave * silent call coc#util#float_hide()
+"commenting out because coc#util#float_hide() doesn't exist any more
+"autocmd InsertLeave * silent call coc#util#float_hide()
+
+" Don't hide the cursor, because sometimes it doesn't come back!
+let g:coc_disable_transparent_cursor = 1
