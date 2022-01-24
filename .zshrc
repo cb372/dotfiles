@@ -1,7 +1,7 @@
 # Explicitly set $SHELL
 export SHELL=/bin/zsh
 
-# Set EDITOR (e.g. for SVN commit messages)
+# Set EDITOR (e.g. for commit messages)
 export EDITOR=/usr/bin/vim
 
 # Load .zprofile if for some reason it hasn't been loaded
@@ -86,7 +86,7 @@ clone() {
 }
 
 # Set up easy_install to install packages to /usr/local/lib/python2.7/site-packages
-alias easy_install='easy_install --prefix /usr/local' 
+alias easy_install='easy_install --prefix /usr/local'
 
 # Typo aliases
 alias exut='exit'
@@ -119,21 +119,6 @@ bindkey " " expandalias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
-#Useful functions
-function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
-function fname() { find . -iname "*$@*"; }
-function fix() {
-  vim $1
-  echo -n "OK to mark as merged? [y/N] "
-  read ans
-  case $ans in
-    y|Y)
-      git add $1
-      ;;
-  esac
-}
-function s() { ssh -o StrictHostKeyChecking=no ec2-user@$1 }
-
 #Add git info to RHS prompt
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
@@ -160,9 +145,6 @@ add-zsh-hook precmd vcs_info_wrapper
 PROMPT='%{$fg[green]%}[%n@%m %h %~]%{$reset_color%} ${vcs_info_msg_0_}
 $ '
 
-# Set up autojump
-which brew &> /dev/null && [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
 # Disable annoying 'no matches found' warning
 setopt nonomatch
 
@@ -183,29 +165,6 @@ rename-window() {
   export CUSTOMISED_TMUX_WINDOW=true
 }
 
-# Validate a CloudFormation template
-validate_cloudformation() {
-  aws --region eu-west-1 cloudformation validate-template --template-body "file://${1:a}"
-}
-
-# added by travis gem
-[ -f /Users/chris/.travis/travis.sh ] && source /Users/chris/.travis/travis.sh
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Set up boot2docker
-eval "$(docker-machine env dev 2>/dev/null)"
-
-# OPAM configuration (OCaml package manager)
-. ~/.opam/opam-init/init.zsh > /dev/null 2>&1 || true
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/chris/code/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/chris/code/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/chris/code/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/chris/code/google-cloud-sdk/completion.zsh.inc'; fi
-
 PATH="/Users/chris/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/Users/chris/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/chris/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
@@ -219,7 +178,8 @@ autoload znt-usetty-wrapper znt-history-widget znt-cd-widget znt-kill-widget
 alias naliases=n-aliases ncd=n-cd nenv=n-env nfunctions=n-functions nhistory=n-history
 alias nkill=n-kill noptions=n-options npanelize=n-panelize nhelp=n-help
 zle -N znt-history-widget
-bindkey '^R' znt-history-widget
+# Disabled key binding because I bind Ctrl-R to fzf
+# bindkey '^R' znt-history-widget
 setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
 zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
 ### END ###
@@ -250,6 +210,5 @@ sbtlatest() {
   local latestscala=$(curl -s https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/maven-metadata.xml | xmllint --xpath '/metadata/versioning/latest/text()' -)
   sbtnew "$projectname" "$latestsbt" "$latestscala"
 }
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

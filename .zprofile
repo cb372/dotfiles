@@ -27,6 +27,7 @@ export COC_GITHUB_USERS_TOKEN=$(cat ~/coc-github-users-token.txt)
 
 source ${HOME}/.zprofile.local
 
+
 # Sort out locale for Python programs (e.g. AWS CLI)
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -67,9 +68,12 @@ java8() {
   export JAVA_HOME=$(cs java-home --jvm adopt:1.8)
 }
 
-# set up nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# Call this function to enable the nvm command.
+# For some reason this is really slow, so I don't run it eagerly when opening a new terminal pane
+nvm_init() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+}
 
 export LOADED_ZPROFILE=true
