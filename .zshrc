@@ -148,23 +148,6 @@ $ '
 # Disable annoying 'no matches found' warning
 setopt nonomatch
 
-# Show pwd as tmux window name
-precmd () {
-  if [ "$CUSTOMISED_TMUX_WINDOW" == "" ]; then
-    if [ "$(pwd)" == "$HOME" ]; then
-      dir="<home>"
-    else
-      dir="$(basename $(pwd))"
-    fi
-    tmux rename-window "$dir" 2>/dev/null
-  fi
-}
-
-rename-window() {
-  tmux rename-window "$@"
-  export CUSTOMISED_TMUX_WINDOW=true
-}
-
 PATH="/Users/chris/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/Users/chris/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/chris/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;

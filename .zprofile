@@ -27,7 +27,6 @@ export COC_GITHUB_USERS_TOKEN=$(cat ~/coc-github-users-token.txt)
 
 source ${HOME}/.zprofile.local
 
-
 # Sort out locale for Python programs (e.g. AWS CLI)
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
