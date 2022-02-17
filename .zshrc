@@ -195,3 +195,8 @@ sbtlatest() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> scala-cli completions >>>
+fpath=("/Users/chris/Library/Application Support/ScalaCli/completions/zsh" $fpath)
+compinit
+# <<< scala-cli completions <<<
