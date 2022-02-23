@@ -190,7 +190,7 @@ EOF
 sbtlatest() {
   local projectname=$1
   local latestsbt=$(curl -s https://repo1.maven.org/maven2/org/scala-sbt/sbt/maven-metadata.xml | xmllint --xpath '/metadata/versioning/latest/text()' -)
-  local latestscala=$(curl -s https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/maven-metadata.xml | xmllint --xpath '/metadata/versioning/latest/text()' -)
+  local latestscala=$(curl -s https://repo1.maven.org/maven2/org/scala-lang/scala3-compiler_3/maven-metadata.xml | xmllint --xpath '/metadata/versioning/versions/version[not(contains(text(), "NIGHTLY"))][not(contains(text(), "RC"))][last()]/text()' -)
   sbtnew "$projectname" "$latestsbt" "$latestscala"
 }
 
