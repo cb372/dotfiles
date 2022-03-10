@@ -60,6 +60,10 @@ bindkey '^[[B' down-line-or-search
 bindkey '' backward-word
 bindkey '' forward-word
 
+git-main-branch() {
+  if git branch | grep --silent main; then echo "main"; else echo "master"; fi
+}
+
 # Aliases
 alias ll='ls -l'
 alias la='ls -a'
@@ -71,9 +75,9 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git log --graph --date=short --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ad (%ar)%Creset"'
 alias gl-nocolour='git log --no-color --graph --date=short --pretty="format:%h%d %s %an, %ad (%ar)"'
-alias git-cleanup='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
+alias git-cleanup='git branch --merged | grep -v "\*" | grep -v $(git-main-branch) | xargs -n 1 git branch -d'
 alias git-prune='git remote prune origin'
-alias git-catchup='if [ -z "$(git status --porcelain)" ]; then git checkout master; git pull; else echo "Oops, working directory is dirty"; fi'
+alias git-catchup='if [ -z "$(git status --porcelain)" ]; then git checkout $(git-main-branch); git pull; else echo "Oops, working directory is dirty"; fi'
 alias oops='git commit --amend'
 alias top='top -o cpu'
 alias vim=nvim
