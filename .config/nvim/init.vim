@@ -1,9 +1,6 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
-syntax on
-filetype plugin indent on
-
 call plug#begin()
 
 " General
