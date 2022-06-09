@@ -204,3 +204,7 @@ sbtlatest() {
 fpath=("/Users/chris/Library/Application Support/ScalaCli/completions/zsh" $fpath)
 compinit
 # <<< scala-cli completions <<<
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/chris/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
