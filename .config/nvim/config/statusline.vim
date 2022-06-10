@@ -8,6 +8,7 @@ set statusline +=\ %{&ff}            "file format
 set statusline +=\ %y                "file type
 set statusline +=\ %<%F            "full path
 set statusline +=\ %m                "modified flag
+set statusline +=\ %{luaeval('vim.g[\"metals_status\"]')}  "metals status
 set statusline +=\ %=%5l             "current line
 set statusline +=\ /%L               "total lines
 set statusline +=\ %4v             "virtual column number

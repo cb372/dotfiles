@@ -46,6 +46,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCM
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
+" Scala
+Plug 'scalameta/nvim-metals'
+
 " Haskell
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
@@ -68,6 +71,7 @@ lua require('telescope_config')
 lua require('treesitter_config')
 lua require('search')
 lua require('completions')
+lua require('metals_config')
 
 for fpath in split(globpath('~/.config/nvim/config', '*.vim'), '\n')
   exe 'source' fpath
