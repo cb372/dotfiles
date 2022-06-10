@@ -26,6 +26,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
 " Tags
 Plug 'majutsushi/tagbar'
 Plug 'craigemery/vim-autotag'
@@ -54,6 +61,9 @@ Plug 'elmcast/elm-vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 call plug#end()
+
+lua require('telescope').load_extension('fzf')
+lua require('treesitter')
 
 for fpath in split(globpath('~/.config/nvim/config', '*.vim'), '\n')
   exe 'source' fpath
