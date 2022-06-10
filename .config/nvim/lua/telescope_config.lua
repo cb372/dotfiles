@@ -1,0 +1,15 @@
+local tele = require('telescope')
+
+tele.load_extension('fzf')
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', 't*', builtin.grep_string)
+vim.keymap.set('n', 'tc', builtin.command_history)
+vim.keymap.set('n', 'tf', builtin.find_files)
+vim.keymap.set('n', 'tg', builtin.live_grep)
+vim.keymap.set('n', 'th', builtin.help_tags)
+vim.keymap.set('n', 'tm', builtin.keymaps)
+vim.keymap.set('n', 'to', builtin.oldfiles)
+vim.keymap.set('n', 'tr', builtin.registers)
+vim.keymap.set('n', 'ts', builtin.search_history)
+vim.keymap.set('n', 'tt', builtin.builtin)

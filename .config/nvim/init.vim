@@ -8,7 +8,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-unimpaired'
 Plug 'godlygeek/tabular'
-"Plug 'sbdchd/neoformat'
 Plug 'neomake/neomake'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
@@ -23,8 +22,6 @@ Plug 'tpope/vim-surround'
 
 " Filesystem/search
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -62,8 +59,10 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 call plug#end()
 
-lua require('telescope').load_extension('fzf')
-lua require('treesitter')
+lua require('telescope_config')
+lua require('treesitter_config')
+
+lua require('search')
 
 for fpath in split(globpath('~/.config/nvim/config', '*.vim'), '\n')
   exe 'source' fpath
