@@ -1,6 +1,7 @@
 *.*
 !.*
 !*.vim
+!*.lua
 !*.json
 !*.sbt
 .config/coc/

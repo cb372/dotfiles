@@ -20,6 +20,18 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'tpope/vim-surround'
 
+" Completions and snippets
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-calc'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+
 " Filesystem/search
 Plug 'scrooloose/nerdtree'
 
@@ -30,7 +42,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
-" Tags
+" Tags (TODO remove these, I never use them)
 Plug 'majutsushi/tagbar'
 Plug 'craigemery/vim-autotag'
 
@@ -54,15 +66,12 @@ Plug 'idris-hackers/idris-vim'
 " Elm
 Plug 'elmcast/elm-vim'
 
-" LSP
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-
 call plug#end()
 
 lua require('telescope_config')
 lua require('treesitter_config')
-
 lua require('search')
+lua require('completions')
 
 for fpath in split(globpath('~/.config/nvim/config', '*.vim'), '\n')
   exe 'source' fpath
