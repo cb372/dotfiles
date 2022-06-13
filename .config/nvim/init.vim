@@ -67,6 +67,8 @@ Plug 'elmcast/elm-vim'
 
 call plug#end()
 
+lua require('basics')
+lua require('mappings')
 lua require('telescope_config')
 lua require('treesitter_config')
 lua require('search')

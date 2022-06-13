@@ -1,23 +1,37 @@
+-- From the nvim-metals readme:
+--
+-- vim.opt_global.shortmess:remove("F") will do what you need. If you don't
+-- know what shortmess is, check out :h shortmess. Without doing this,
+-- autocommands that deal with filetypes prohibit messages from being shown, so
+-- some of the messages we show to help users get started may not be shown. If
+-- you're confident you don't need help setting up, then just remove this, and
+-- nvim-metals will work fine, but any log messages won't actually be shown to
+-- you if something goes wrong with nvim-metals.
+--
+-- Not sure why we also need to add "c" - I cargo-culted that from Chris Kipp's
+-- example configuration.
 vim.opt_global.shortmess:remove("F"):append("c")
 
-vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.definition()<CR>")
-vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-vim.keymap.set("n", "gds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
-vim.keymap.set("n", "gws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>")
-vim.keymap.set("n", "<leader>cl", [[<cmd>lua vim.lsp.codelens.run()<CR>]])
-vim.keymap.set("n", "<leader>sh", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
-vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
-vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-vim.keymap.set("n", "<leader>ws", '<cmd>lua require"metals".hover_worksheet()<CR>')
-vim.keymap.set("n", "<leader>aa", [[<cmd>lua vim.diagnostic.setqflist()<CR>]]) -- all workspace diagnostics
-vim.keymap.set("n", "<leader>ae", [[<cmd>lua vim.diagnostic.setqflist({severity = "E"})<CR>]]) -- all workspace errors
-vim.keymap.set("n", "<leader>aw", [[<cmd>lua vim.diagnostic.setqflist({severity = "W"})<CR>]]) -- all workspace warnings
-vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<CR>") -- buffer diagnostics only
-vim.keymap.set("n", "[c", "<cmd>lua vim.diagnostic.goto_prev { wrap = false }<CR>")
-vim.keymap.set("n", "]c", "<cmd>lua vim.diagnostic.goto_next { wrap = false }<CR>")
+local m = require('metals')
+
+vim.keymap.set("n", "gD", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "gr", vim.lsp.buf.references)
+vim.keymap.set("n", "gds", vim.lsp.buf.document_symbol)
+vim.keymap.set("n", "gws", vim.lsp.buf.workspace_symbol)
+vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run)
+vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+vim.keymap.set("n", "<leader>ws", m.hover_worksheet)
+vim.keymap.set("n", "<leader>aa", vim.diagnostic.setqflist) -- all workspace diagnostics
+vim.keymap.set("n", "<leader>ae", function() vim.diagnostic.setqflist({severity = "E"}) end) -- all workspace errors
+vim.keymap.set("n", "<leader>aw", function() vim.diagnostic.setqflist({severity = "W"}) end) -- all workspace warnings
+vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist) -- buffer diagnostics only
+vim.keymap.set("n", "[c", function() vim.diagnostic.goto_prev({wrap = false}) end)
+vim.keymap.set("n", "]c", function() vim.diagnostic.goto_next({wrap = false}) end)
 
 local metals_config = require("metals").bare_config()
 
