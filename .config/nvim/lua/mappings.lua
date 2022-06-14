@@ -14,7 +14,7 @@ vim.keymap.set("i", "<Up>", "<Nop>")
 vim.keymap.set("i", "<Down>", "<Nop>")
 
 -- Move between windows without having to press Ctrl-W
-vim.keymap.set("", "<C-h>", "C-w>h")
-vim.keymap.set("", "<C-j>", "C-w>j")
-vim.keymap.set("", "<C-k>", "C-w>k")
-vim.keymap.set("", "<C-l>", "C-w>l")
+vim.keymap.set("", "<C-h>", "<C-w>h")
+vim.keymap.set("", "<C-j>", "<C-w>j")
+vim.keymap.set("", "<C-k>", "<C-w>k")
+vim.keymap.set("", "<C-l>", "<C-w>l")
