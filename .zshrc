@@ -2,7 +2,7 @@
 export SHELL=/bin/zsh
 
 # Set EDITOR (e.g. for commit messages)
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/nvim
 
 # Load .zprofile if for some reason it hasn't been loaded
 if [ "$LOADED_ZPROFILE" != "true" ]; then
