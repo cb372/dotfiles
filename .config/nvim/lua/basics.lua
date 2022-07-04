@@ -6,7 +6,7 @@ vim.opt.number = true
 vim.opt.scrolloff = 3
 
 -- make backspace work across line breaks
-vim.opt.backspace= { 'indent', 'eol', 'start' }
+vim.opt.backspace = { 'indent', 'eol', 'start' }
 
 -- copy/paste directly to/from OSX clipboard (no need to use "+y to copy)
 vim.opt.clipboard = 'unnamed'

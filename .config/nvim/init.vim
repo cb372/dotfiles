@@ -16,7 +16,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'embear/vim-localvimrc'
 Plug 'aserebryakov/vim-todo-lists'
 Plug 'chrisbra/csv.vim'
-Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'tpope/vim-surround'
 
@@ -41,6 +40,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'AckslD/nvim-neoclip.lua'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -71,6 +71,7 @@ lua require('basics')
 lua require('mappings')
 lua require('telescope_config')
 lua require('treesitter_config')
+lua require('neoclip_config')
 lua require('search')
 lua require('completions')
 lua require('metals_config')
