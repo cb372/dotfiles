@@ -19,6 +19,9 @@ Plug 'chrisbra/csv.vim'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'tpope/vim-surround'
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+
 " Completions and snippets
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
@@ -53,10 +56,10 @@ Plug 'scalameta/nvim-metals'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
-" JS/React
+" JS/TS/React
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
+Plug 'jose-elias-alvarez/typescript.nvim'
 Plug 'peitalin/vim-jsx-typescript'
 
 " Idris
@@ -75,6 +78,7 @@ lua require('neoclip_config')
 lua require('search')
 lua require('completions')
 lua require('metals_config')
+lua require('typescript_config')
 
 for fpath in split(globpath('~/.config/nvim/config', '*.vim'), '\n')
   exe 'source' fpath
