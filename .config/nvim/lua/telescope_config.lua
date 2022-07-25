@@ -1,6 +1,7 @@
 local tele = require('telescope')
 
 tele.load_extension('fzf')
+tele.load_extension('metals')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', 't*', builtin.grep_string)
