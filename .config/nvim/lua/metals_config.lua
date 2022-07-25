@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Open CodeLens 
 vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "Show signature help" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting, { desc = "Format the current buffer" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Open code action menu" })
+vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, { desc = "Open code action menu" })
 vim.keymap.set("n", "<leader>ws", m.hover_worksheet, { desc = "Show info about current line of worksheet" })
 vim.keymap.set("n", "<leader>aa", vim.diagnostic.setqflist, { desc = "List all workspace diagnostics" })
 vim.keymap.set("n", "<leader>ae", function() vim.diagnostic.setqflist({severity = "E"}) end, { desc = "List all workspace errors" })
