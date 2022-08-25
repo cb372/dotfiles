@@ -15,6 +15,7 @@
 .config/znt/
 .sbt/ghpages/
 .sbt/preloaded/
+.sbt/credentials
 .vim/plugged/
 .netrwhis*
 .DS_Store
