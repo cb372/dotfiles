@@ -12,7 +12,7 @@ Plug 'neomake/neomake'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 Plug 'mattn/emmet-vim'
-Plug 'justinmk/vim-sneak'
+Plug 'phaazon/hop.nvim'
 Plug 'embear/vim-localvimrc'
 Plug 'aserebryakov/vim-todo-lists'
 Plug 'chrisbra/csv.vim'
@@ -77,6 +77,7 @@ lua require('telescope_config')
 lua require('treesitter_config')
 lua require('neoclip_config')
 lua require('search')
+lua require('hop_config')
 lua require('completions')
 lua require('metals_config')
 lua require('typescript_config')
