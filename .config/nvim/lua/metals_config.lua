@@ -10,7 +10,7 @@
 --
 -- Not sure why we also need to add "c" - I cargo-culted that from Chris Kipp's
 -- example configuration.
-vim.opt_global.shortmess:remove("F"):append("c")
+--vim.opt_global.shortmess:remove("F"):append("c")
 
 local m = require('metals')
 
@@ -42,8 +42,7 @@ metals_config.settings = {
 metals_config.init_options.statusBarProvider = "on"
 
 -- Integration with nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-metals_config.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Autocmd that will actually be in charging of starting the whole thing
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
