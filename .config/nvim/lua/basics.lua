@@ -15,3 +15,6 @@ vim.opt.clipboard = 'unnamed'
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
+
+-- mouse? hell no! (they enabled it by default in neovim 0.8.0)
+vim.opt.mouse = ''
