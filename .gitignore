@@ -13,6 +13,8 @@
 .config/wireshark/
 .config/yarn/
 .config/znt/
+.config/op/
+.config/raycast/
 .sbt/ghpages/
 .sbt/preloaded/
 .sbt/credentials
