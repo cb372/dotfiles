@@ -81,6 +81,7 @@ lua require('hop_config')
 lua require('completions')
 lua require('metals_config')
 lua require('typescript_config')
+lua require('golang_config')
 
 for fpath in split(globpath('~/.config/nvim/config', '*.vim'), '\n')
   exe 'source' fpath
