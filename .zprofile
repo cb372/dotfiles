@@ -76,3 +76,5 @@ nvm_init() {
 }
 
 export LOADED_ZPROFILE=true
+# Add .NET Core SDK tools
+export PATH="$PATH:/Users/chris/.dotnet/tools"

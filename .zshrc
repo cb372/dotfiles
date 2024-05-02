@@ -1,3 +1,5 @@
+#zmodload zsh/zprof
+
 # Explicitly set $SHELL
 export SHELL=/bin/zsh
 
@@ -24,12 +26,17 @@ setopt SHAREHISTORY
 setopt HIST_IGNORE_SPACE
 bindkey '^r' history-incremental-pattern-search-backward
 
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/chris/.zshrc'
 
+# >>> scala-cli completions >>>
+fpath=("/Users/chris/Library/Application Support/ScalaCli/completions/zsh" $fpath)
+# <<< scala-cli completions <<<
+
 autoload -Uz compinit compdef
-compinit
-# End of lines added by compinstall
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 
 # AWS auto completion (note: this must come after the call to `compinit`)
 [ -f /usr/local/bin/aws_zsh_completer.sh ] && source /usr/local/bin/aws_zsh_completer.sh
@@ -201,10 +208,8 @@ sbtlatest() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# >>> scala-cli completions >>>
-fpath=("/Users/chris/Library/Application Support/ScalaCli/completions/zsh" $fpath)
-compinit
-# <<< scala-cli completions <<<
+
+#zprof
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/chris/.rd/bin:$PATH"
