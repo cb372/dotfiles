@@ -30,8 +30,11 @@ return {
       --map('n', 'gr', vim.lsp.buf.references, { desc = 'Show references' })
       map('n', 'gr', '<cmd>Telescope lsp_references<CR>', { desc = 'Show references' })
 
-      map('n', 'gds', vim.lsp.buf.document_symbol, { desc = 'List symbols in document' })
-      map('n', 'gws', vim.lsp.buf.workspace_symbol, { desc = 'Search for symbol in workspace' })
+      --map('n', 'gds', vim.lsp.buf.document_symbol, { desc = 'List symbols in document' })
+      map('n', 'gds', '<cmd>Telescope lsp_document_symbols<CR>', { desc = 'Search for symbol in document' })
+
+      --map('n', 'gws', vim.lsp.buf.workspace_symbol, { desc = 'Search for symbol in workspace' })
+      map('n', 'gws', '<cmd>Telescope lsp_dynamic_workspace_symbols<CR>', { desc = 'Search for symbol in workspace' })
 
       map('n', '<leader>l', vim.lsp.codelens.run, { desc = 'Open CodeLens action menu' })
       map('n', '<leader>sh', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
