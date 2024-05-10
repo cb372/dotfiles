@@ -13,7 +13,7 @@ if [ -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
 fi
 
-# Initializa pyenv
+# Initialize pyenv
 if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
 
 # Add ghar to path
@@ -39,7 +39,7 @@ export GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
 
 # Add Python bin dir to PATH
-PATH=$PATH:/Users/chris/Library/Python/3.6/bin
+PATH=$PATH:/usr/local/opt/python3/libexec/bin
 
 # Add Cargo (Rust) bin dir to PATH
 PATH=$PATH:/Users/chris/.cargo/bin
@@ -59,8 +59,8 @@ export FZF_DEFAULT_COMMAND='ag --ignore node_modules -g ""'
 # Set JAVA_HOME to Java 8
 #[ -f /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home)
 #
-# Set JAVA_HOME to Java 17
-export JAVA_HOME=$(cs java-home --jvm amazon-corretto@1.17)
+# Set JAVA_HOME to Java 21
+export JAVA_HOME=$(cs java-home --jvm corretto@21)
 
 # Function to easily downgrade to Java 8
 java8() {
@@ -75,6 +75,11 @@ nvm_init() {
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 }
 
-export LOADED_ZPROFILE=true
 # Add .NET Core SDK tools
 export PATH="$PATH:/Users/chris/.dotnet/tools"
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/chris/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
+
+export LOADED_ZPROFILE=true
