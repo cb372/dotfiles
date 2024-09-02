@@ -206,7 +206,7 @@ sbtlatest() {
   sbtnew "$projectname" "$latestsbt" "$latestscala"
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+type -p fzf > /dev/null && source <(fzf --zsh)
 
 
 #zprof
