@@ -6,7 +6,7 @@ return {
   config = function()
     local lspconfig = require('lspconfig')
 
-    lspconfig.tsserver.setup({})
+    lspconfig.ts_ls.setup({})
     lspconfig.rust_analyzer.setup({})
   end
 }
