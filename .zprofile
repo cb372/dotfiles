@@ -75,6 +75,11 @@ nvm_init() {
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 }
 
+# Allows me to run a command I've copied from somewhere that includes a "$" prefix
+$ () {
+  eval "$@"
+}
+
 # Add .NET Core SDK tools
 export PATH="$PATH:/Users/chris/.dotnet/tools"
 
