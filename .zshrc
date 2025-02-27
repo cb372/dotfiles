@@ -210,3 +210,7 @@ type -p fzf > /dev/null && source <(fzf --zsh)
 
 
 #zprof
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/chris/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
