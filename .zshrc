@@ -89,6 +89,7 @@ alias oops='git commit --amend'
 alias top='top -o cpu'
 alias vim=nvim
 alias vimdiff='nvim -d'
+alias nvimdiff='nvim -d'
 alias fvim='nvim $(fzf)'
 alias cdk='npx aws-cdk'
 
