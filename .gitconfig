@@ -17,4 +17,4 @@
 	gpgsign = true
 [diff]
 	noprefix = true
-	tool = vimdiff
+	tool = nvimdiff
