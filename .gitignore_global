@@ -16,3 +16,4 @@ target/
 metals.sbt
 .bsp/
 .eslint_cache
+.mcp.json
