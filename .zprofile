@@ -1,6 +1,8 @@
-# Move /usr/local/sbin to start of PATH
+# Move Homebrew dirs to start of PATH
 PATH=/usr/local/bin:$(echo $PATH | sed -e 's/\/usr\/local\/bin\://')
 PATH=/usr/local/sbin:$(echo $PATH | sed -e 's/\/usr\/local\/sbin\://')
+PATH=/opt/homebrew/bin:$(echo $PATH | sed -e 's/\/opt\/homebrew\/bin\://')
+PATH=/opt/homebrew/sbin:$(echo $PATH | sed -e 's/\/opt\/homebrew\/sbin\://')
 export PATH
 
 PATH=$PATH:$HOME/bin:$HOME/.local/bin
@@ -13,6 +15,9 @@ if [ -d "$HOME/.rbenv" ]; then
   eval "$(rbenv init -)"
 fi
 
+# Install the autojump 'j' command
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
 # Initialize pyenv
 if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
 
@@ -23,7 +28,6 @@ PATH=$PATH:$HOME/ghar/bin
 PATH=$PATH:/usr/local/share/npm/bin
 
 export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/homebrew_github_api_token.txt)
-export COC_GITHUB_USERS_TOKEN=$(cat ~/coc-github-users-token.txt)
 
 source ${HOME}/.zprofile.local
 
@@ -42,16 +46,13 @@ PATH=$PATH:$GOPATH/bin
 PATH=$PATH:/usr/local/opt/python3/libexec/bin
 
 # Add Cargo (Rust) bin dir to PATH
-PATH=$PATH:/Users/chris/.cargo/bin
+PATH=$PATH:$HOME/.cargo/bin
 
 # Set Postgres data dir
 export PGDATA=/usr/local/var/postgres
 
 # This is needed to sign git commits
 export GPG_TTY=$(tty)
-
-# Set up nix
-#. /Users/chris/.nix-profile/etc/profile.d/nix.sh
 
 # Make fzf use ag as its find command so it respects .gitignore, .gitignore_global, etc.
 export FZF_DEFAULT_COMMAND='ag --ignore node_modules -g ""'
@@ -83,8 +84,11 @@ $ () {
 # Add .NET Core SDK tools
 export PATH="$PATH:/Users/chris/.dotnet/tools"
 
+# Add Rancher Desktop bin
+export PATH=$PATH:$HOME/.rd/bin
+
 # >>> coursier install directory >>>
-export PATH="$PATH:/Users/chris/Library/Application Support/Coursier/bin"
+export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<
 
 export LOADED_ZPROFILE=true
