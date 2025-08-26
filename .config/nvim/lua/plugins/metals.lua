@@ -11,7 +11,15 @@ return {
     local metals_config = m.bare_config()
 
     metals_config.settings = {
-      showImplicitArguments = true,
+      defaultBspToBuildTool = true,
+      inlayHints = {
+        byNameParameters = { enable = true },
+        hintsInPatternMatch = { enable = true },
+        implicitArguments = { enable = true },
+        implicitConversions = { enable = true },
+        inferredTypes = { enable = true },
+        typeParameters = { enable = true },
+      },
     }
 
     metals_config.init_options.statusBarProvider = 'on'
