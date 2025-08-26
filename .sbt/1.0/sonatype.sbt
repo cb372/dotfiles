@@ -1,1 +1,1 @@
-/Users/chris/sonatype.sbt
+../../../dotfiles-secrets/sonatype.sbt
