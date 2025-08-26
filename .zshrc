@@ -4,7 +4,7 @@
 export SHELL=/bin/zsh
 
 # Set EDITOR (e.g. for commit messages)
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/opt/homebrew/bin/nvim
 
 # Load .zprofile if for some reason it hasn't been loaded
 if [ "$LOADED_ZPROFILE" != "true" ]; then
@@ -213,5 +213,14 @@ type -p fzf > /dev/null && source <(fzf --zsh)
 #zprof
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/chris/.rd/bin:$PATH"
+export PATH="/Users/chris.birchall/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Enable direnv
+eval "$(direnv hook zsh)"
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
